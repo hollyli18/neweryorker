@@ -69,190 +69,190 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
 
 
 //character information is in a json format
-	$.getJSON("_/js/characters.json", function(data){
-
-		$num_chars = data.characters.length;
-    //num_chars is the number of characters
-		$rand = Math.floor(Math.random() * $num_chars);
-    //pick a random number (aka a random character)
-		$cur_char = $rand;
-    //assign cur_char to that random number
-
-		$character = data.characters[$cur_char];
-    //find the character that is assigned to that number
-
-		if(typeof $character.name != 'undefined'){
-			$("#character-name").show();
-			$("#character-name").html($character.name);
-		} else {
-			$("#character-name").hide();
-		}
-
-		if(typeof $character.type != 'undefined'){
-			$("#character-type").show();
-			$("#character-type").html($character.type);
-		} else {
-			$("#character-type").hide();
-		}
-
-		if(typeof $character.bio != 'undefined'){
-			$("#character-bio").show();
-			$("#character-bio").html($character.bio);
-		} else {
-			$("#character-bio").hide();
-		}
-
-		if(typeof $character.part2 != 'undefined'){
-			$("#character-part2").show();
-			$("#character-part2").html($character.part2);
-		} else {
-			$("#character-part2").hide();
-		}
-
-		$(".character-urls").html('');
-		if(typeof $character.links != 'undefined' && $character.links.length>0){
-			$.each($character.links, function(key, val){
-				$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
-			});
-		}
-
-		if(typeof $character.shortname != 'undefined'){
-			$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
-			$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
-		}
-
-	});
-
-	$("#character .arrow-left").click(function(){
-		$("#character .content").scrollTop(0);
-		$.getJSON("_/js/characters.json", function(data){
-			$cur_char = $cur_char-1;
-			if($cur_char<0) $cur_char = $num_chars+$cur_char;
-
-			$character = data.characters[$cur_char];
-
-			$("#character-name").hide();
-			$("#character-type").hide();
-			$("#character-bio").hide();
-			$("#character-part2").hide();
-			$(".character-urls").hide();
-
-			if(typeof $character.name != 'undefined'){
-				$("#character-name").fadeIn(400);
-				$("#character-name").html($character.name);
-			} else {
-				$("#character-name").hide();
-			}
-
-			if(typeof $character.type != 'undefined'){
-				$("#character-type").fadeIn(400);
-				$("#character-type").html($character.type);
-			} else {
-				$("#character-type").hide();
-			}
-
-			if(typeof $character.bio != 'undefined'){
-				$("#character-bio").fadeIn(400);
-				$("#character-bio").html($character.bio);
-			} else {
-				$("#character-bio").hide();
-			}
-
-			if(typeof $character.part2 != 'undefined'){
-				$("#character-part2").fadeIn(400);
-				$("#character-part2").html($character.part2);
-			} else {
-				$("#character-part2").hide();
-			}
-
-			$(".character-urls").html('');
-			if(typeof $character.links != 'undefined' && $character.links.length>0){
-				$.each($character.links, function(key, val){
-					$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
-				});
-			}
-
-			$(".character-img img").hide();
-
-			if(typeof $character.shortname != 'undefined'){
-				$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
-				$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
-			}
-
-			$("#character-img-mobile img, #character-img-desktop img").on("load", function(){
-				$("#character-img-desktop img").fadeIn(400);
-				$("#character-img-mobile img").fadeIn(400);
-				$(".character-urls").fadeIn(400);
-			});
-
-
-		});
-	});
-
-	$("#character .arrow-right").click(function(){
-		$("#character .content").scrollTop(0);
-		$.getJSON("_/js/characters.json", function(data){
-			$cur_char = $cur_char+1;
-			if($cur_char>=$num_chars) $cur_char = $cur_char - $num_chars;
-
-			$character = data.characters[$cur_char];
-
-			$("#character-name").hide();
-			$("#character-type").hide();
-			$("#character-bio").hide();
-			$("#character-part2").hide();
-			$(".character-urls").hide();
-
-			if(typeof $character.name != 'undefined'){
-				$("#character-name").fadeIn(400);
-				$("#character-name").html($character.name);
-			} else {
-				$("#character-name").hide();
-			}
-
-			if(typeof $character.type != 'undefined'){
-				$("#character-type").fadeIn(400);
-				$("#character-type").html($character.type);
-			} else {
-				$("#character-type").hide();
-			}
-
-			if(typeof $character.bio != 'undefined'){
-				$("#character-bio").fadeIn(400);
-				$("#character-bio").html($character.bio);
-			} else {
-				$("#character-bio").hide();
-			}
-
-			if(typeof $character.part2 != 'undefined'){
-				$("#character-part2").fadeIn(400);
-				$("#character-part2").html($character.part2);
-			} else {
-				$("#character-part2").hide();
-			}
-
-			$(".character-urls").html('');
-			if(typeof $character.links != 'undefined' && $character.links.length>0){
-				$.each($character.links, function(key, val){
-					$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
-				});
-			}
-
-			$(".character-img img").hide();
-
-			if(typeof $character.shortname != 'undefined'){
-				$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
-				$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
-			}
-
-			$("#character-img-mobile img, #character-img-desktop img").on("load", function(){
-				$("#character-img-desktop img").fadeIn(400);
-				$("#character-img-mobile img").fadeIn(400);
-				$(".character-urls").fadeIn(400);
-			});
-
-		});
-	});
+	// $.getJSON("_/js/characters.json", function(data){
+  //
+	// 	$num_chars = data.characters.length;
+  //   //num_chars is the number of characters
+	// 	$rand = Math.floor(Math.random() * $num_chars);
+  //   //pick a random number (aka a random character)
+	// 	$cur_char = $rand;
+  //   //assign cur_char to that random number
+  //
+	// 	$character = data.characters[$cur_char];
+  //   //find the character that is assigned to that number
+  //
+	// 	if(typeof $character.name != 'undefined'){
+	// 		$("#character-name").show();
+	// 		$("#character-name").html($character.name);
+	// 	} else {
+	// 		$("#character-name").hide();
+	// 	}
+  //
+	// 	if(typeof $character.type != 'undefined'){
+	// 		$("#character-type").show();
+	// 		$("#character-type").html($character.type);
+	// 	} else {
+	// 		$("#character-type").hide();
+	// 	}
+  //
+	// 	if(typeof $character.bio != 'undefined'){
+	// 		$("#character-bio").show();
+	// 		$("#character-bio").html($character.bio);
+	// 	} else {
+	// 		$("#character-bio").hide();
+	// 	}
+  //
+	// 	if(typeof $character.part2 != 'undefined'){
+	// 		$("#character-part2").show();
+	// 		$("#character-part2").html($character.part2);
+	// 	} else {
+	// 		$("#character-part2").hide();
+	// 	}
+  //
+	// 	$(".character-urls").html('');
+	// 	if(typeof $character.links != 'undefined' && $character.links.length>0){
+	// 		$.each($character.links, function(key, val){
+	// 			$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
+	// 		});
+	// 	}
+  //
+	// 	if(typeof $character.shortname != 'undefined'){
+	// 		$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
+	// 		$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
+	// 	}
+  //
+	// });
+  //
+	// $("#character .arrow-left").click(function(){
+	// 	$("#character .content").scrollTop(0);
+	// 	$.getJSON("_/js/characters.json", function(data){
+	// 		$cur_char = $cur_char-1;
+	// 		if($cur_char<0) $cur_char = $num_chars+$cur_char;
+  //
+	// 		$character = data.characters[$cur_char];
+  //
+	// 		$("#character-name").hide();
+	// 		$("#character-type").hide();
+	// 		$("#character-bio").hide();
+	// 		$("#character-part2").hide();
+	// 		$(".character-urls").hide();
+  //
+	// 		if(typeof $character.name != 'undefined'){
+	// 			$("#character-name").fadeIn(400);
+	// 			$("#character-name").html($character.name);
+	// 		} else {
+	// 			$("#character-name").hide();
+	// 		}
+  //
+	// 		if(typeof $character.type != 'undefined'){
+	// 			$("#character-type").fadeIn(400);
+	// 			$("#character-type").html($character.type);
+	// 		} else {
+	// 			$("#character-type").hide();
+	// 		}
+  //
+	// 		if(typeof $character.bio != 'undefined'){
+	// 			$("#character-bio").fadeIn(400);
+	// 			$("#character-bio").html($character.bio);
+	// 		} else {
+	// 			$("#character-bio").hide();
+	// 		}
+  //
+	// 		if(typeof $character.part2 != 'undefined'){
+	// 			$("#character-part2").fadeIn(400);
+	// 			$("#character-part2").html($character.part2);
+	// 		} else {
+	// 			$("#character-part2").hide();
+	// 		}
+  //
+	// 		$(".character-urls").html('');
+	// 		if(typeof $character.links != 'undefined' && $character.links.length>0){
+	// 			$.each($character.links, function(key, val){
+	// 				$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
+	// 			});
+	// 		}
+  //
+	// 		$(".character-img img").hide();
+  //
+	// 		if(typeof $character.shortname != 'undefined'){
+	// 			$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
+	// 			$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
+	// 		}
+  //
+	// 		$("#character-img-mobile img, #character-img-desktop img").on("load", function(){
+	// 			$("#character-img-desktop img").fadeIn(400);
+	// 			$("#character-img-mobile img").fadeIn(400);
+	// 			$(".character-urls").fadeIn(400);
+	// 		});
+  //
+  //
+	// 	});
+	// });
+  //
+	// $("#character .arrow-right").click(function(){
+	// 	$("#character .content").scrollTop(0);
+	// 	$.getJSON("_/js/characters.json", function(data){
+	// 		$cur_char = $cur_char+1;
+	// 		if($cur_char>=$num_chars) $cur_char = $cur_char - $num_chars;
+  //
+	// 		$character = data.characters[$cur_char];
+  //
+	// 		$("#character-name").hide();
+	// 		$("#character-type").hide();
+	// 		$("#character-bio").hide();
+	// 		$("#character-part2").hide();
+	// 		$(".character-urls").hide();
+  //
+	// 		if(typeof $character.name != 'undefined'){
+	// 			$("#character-name").fadeIn(400);
+	// 			$("#character-name").html($character.name);
+	// 		} else {
+	// 			$("#character-name").hide();
+	// 		}
+  //
+	// 		if(typeof $character.type != 'undefined'){
+	// 			$("#character-type").fadeIn(400);
+	// 			$("#character-type").html($character.type);
+	// 		} else {
+	// 			$("#character-type").hide();
+	// 		}
+  //
+	// 		if(typeof $character.bio != 'undefined'){
+	// 			$("#character-bio").fadeIn(400);
+	// 			$("#character-bio").html($character.bio);
+	// 		} else {
+	// 			$("#character-bio").hide();
+	// 		}
+  //
+	// 		if(typeof $character.part2 != 'undefined'){
+	// 			$("#character-part2").fadeIn(400);
+	// 			$("#character-part2").html($character.part2);
+	// 		} else {
+	// 			$("#character-part2").hide();
+	// 		}
+  //
+	// 		$(".character-urls").html('');
+	// 		if(typeof $character.links != 'undefined' && $character.links.length>0){
+	// 			$.each($character.links, function(key, val){
+	// 				$(".character-urls").append("<li><a href='"+val.url+"' target='_blank'><i class='fa fa-"+val.type+"' aria-hidden='true'></i></a></li>");
+	// 			});
+	// 		}
+  //
+	// 		$(".character-img img").hide();
+  //
+	// 		if(typeof $character.shortname != 'undefined'){
+	// 			$("#character-img-desktop img").attr("src", "_/img/characters/"+$character.shortname+".jpg");
+	// 			$("#character-img-mobile img").attr("src", "_/img/characters/square/"+$character.shortname+".jpg");
+	// 		}
+  //
+	// 		$("#character-img-mobile img, #character-img-desktop img").on("load", function(){
+	// 			$("#character-img-desktop img").fadeIn(400);
+	// 			$("#character-img-mobile img").fadeIn(400);
+	// 			$(".character-urls").fadeIn(400);
+	// 		});
+  //
+	// 	});
+	// });
 
 
 
