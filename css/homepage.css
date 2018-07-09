@@ -460,8 +460,7 @@ button:active {
   height: 190px;
   overflow: hidden;
   padding: 0px 20px 20px 20px;
-  margin-top: 20px;
-  font-family: 'butler_stencilblack'; }
+  margin-top: 20px; }
 
 #about .arrows {
   text-align: center;
