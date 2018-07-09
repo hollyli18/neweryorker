@@ -449,7 +449,7 @@ button:active {
   padding: 0px; }
 
 #about {
-  z-index: 2;
+  z-index: 1;
   color: #000000;
   background: #ffffff;
   border-color: #000000;
@@ -468,7 +468,7 @@ button:active {
   margin-top: 5px; }
 
 #contactinfo {
-  z-index: 1;
+  z-index: 2;
   color: #000000;
   background: #ffffff;
   border-color: #000000;
