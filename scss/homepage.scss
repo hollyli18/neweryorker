@@ -15,7 +15,7 @@ body {
 	height:100vh;
 }
 
-.window { border-width:2px; border-style:solid; position:absolute; display:none; }
+.window { border-width:6px; border-style:solid; position:absolute; display:none; }
 
 .window.mini { height:37px!important; overflow:hidden; }
 
@@ -141,9 +141,9 @@ button:active {
 
 #about {
 	z-index:2;
-	color:$gg_blue;
-	background:$gg_yellow;
-	border-color:$gg_blue;
+	color:#000000;
+	background:#ffffff;
+	border-color:#000000;
 	width:445px;
 	height:325px;
 }

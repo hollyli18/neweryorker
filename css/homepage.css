@@ -330,7 +330,7 @@ body {
   height: 100vh; }
 
 .window {
-  border-width: 2px;
+  border-width: 6px;
   border-style: solid;
   position: absolute;
   display: none; }
@@ -450,9 +450,9 @@ button:active {
 
 #about {
   z-index: 2;
-  color: #283983;
-  background: #E2D846;
-  border-color: #283983;
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
   width: 445px;
   height: 325px; }
 
