@@ -469,9 +469,9 @@ button:active {
 
 #contactinfo {
   z-index: 1;
-  color: #D9322C;
-  background: #E0B7C7;
-  border-color: #D9322C;
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
   width: 30em;
   height: 440px; }
 
@@ -494,9 +494,9 @@ button:active {
   height: 85%; }
 
 #character {
-  color: #f1ff63;
-  background: #2193C6;
-  border-color: #f1ff63;
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
   width: 764px;
   height: 480px; }
 
@@ -683,9 +683,9 @@ button:active {
 #quote {
   width: 435px;
   height: 435px;
-  color: #f1ff63;
+  color: #000000;
   background-size: cover;
-  border-color: #f1ff63; }
+  border-color: #000000; }
 
 #quote .content {
   height: 355px;
