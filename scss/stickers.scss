@@ -3,6 +3,13 @@
 
 body {
   cursor: url('../assets/cursor.png'), !important;
+  display: grid;
+  grid-gap: 1vw;
+  /*grid-template-columns: 300px 500px 300px;*/
+  grid-template-columns: 7vw 72vw 10vw;
+  z-index: 1000;
+  // background-color: #fff;
+  color: #444;
 
 }
 span {
