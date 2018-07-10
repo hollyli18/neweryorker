@@ -334,6 +334,27 @@ body {
   width: 100vw;
   height: 100vh; }
 
+.intro-wrapper {
+  text-align: right;
+  font-family: "glacial_indifferenceregular";
+  font-size: 15px;
+  right: 6rem;
+  position: relative;
+  display: inline-block; }
+
+.cap {
+  float: left;
+  font-size: 65px;
+  line-height: 60%;
+  padding-top: 14px;
+  padding-right: 8px;
+  padding-left: 3px;
+  font-family: 'butler_extrabold';
+  font-weight: 400;
+  color: #ff5322;
+  font-size: 55px;
+  padding-top: 18px; }
+
 .window {
   border-width: 6px;
   border-style: solid;
