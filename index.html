@@ -177,11 +177,11 @@ BACKGROUND IMAGES -->
 
     </div> -->
 
-    <div class="more_stickers"></div>
+    <div class="more_stickers">
     <!-- </div> -->
 
 
-      <!-- <div class="d"> --><div>
+      <!-- <div class="d"> -->
         <img src="/assets/raptor.png" class="draggable" style= "max-height: 100px;">
         <img src="/assets/stars.gif" class="draggable2" style= "max-height: 100px;">
 
@@ -309,7 +309,9 @@ BACKGROUND IMAGES -->
 
       $(".draggable").click(function(){
         console.log("I was clicked");
-           $('<img src="/assets/raptor.png" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers")).draggable();
+           // $('<img src="/assets/raptor.png" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers")).draggable();
+           $('<img src="/assets/raptor.png" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers"));
+
            });
 
       </script>
