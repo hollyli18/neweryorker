@@ -106,6 +106,10 @@ span.imgText img {
     line-height: 1rem;
     letter-spacing: -5px;
     color: #000500;
+    z-index: -100;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -20%;
   }
 
 
