@@ -1,4 +1,9 @@
 @font-face {
+  font-family: 'toledo-serialbold';
+  src: url("../font/toledo-serial-bold-webfont.woff2") format("woff2"), url("../font/toledo-serial-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: 'wombyregular';
   /*src: url('womby-regular-webfont.woff2') format('woff2'),
        url('womby-regular-webfont.woff') format('woff');*/
@@ -364,6 +369,14 @@ span.imgText img {
   position: absolute;
   z-index: 1001;
   bottom: 0; }
+
+.header {
+  font-family: 'toledo-serialbold';
+  font-weight: 400;
+  font-size: 19.25rem;
+  line-height: 12rem;
+  letter-spacing: -3px;
+  color: #000500; }
 
 .link {
   position: relative;
