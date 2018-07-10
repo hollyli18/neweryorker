@@ -335,11 +335,11 @@ body {
   height: 100vh; }
 
 .intro-wrapper {
-  text-align: right;
   font-family: "glacial_indifferenceregular";
-  font-size: 15px;
-  right: 6rem;
-  position: relative;
+  font-size: 0.8em;
+  left: 40rem;
+  top: 40%;
+  position: absolute;
   display: inline-block; }
 
 .cap {
