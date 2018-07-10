@@ -13,6 +13,7 @@ body {
 	background-size:cover;
 	width:100vw;
 	height:100vh;
+	cursor: url('../assets/cursor.png'), !important;
 }
 
 .intro-wrapper{
@@ -24,11 +25,12 @@ top: 40%;
 	position: absolute;
   display: inline-block;
 	width: 30%;
+	z-index: 2000;
 }
 
 .cap{
 	float: left;
-    font-size: 65px;
+    font-size: 7px;
     line-height: 60%;
     padding-top: 14px;
     padding-right: 8px;
